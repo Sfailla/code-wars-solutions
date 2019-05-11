@@ -1,7 +1,7 @@
 {
 	"name": "code-wars",
 	"version": "1.0.0",
-	"description": "help solving algorithms at code wars",
+	"description": "solving algorithms at code wars",
 	"main": "index.js",
 	"scripts": {
 		"start": "live-server --browser=firefox",
