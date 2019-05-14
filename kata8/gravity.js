@@ -1,3 +1,3 @@
-solution = (arr_val, arr_unit) => {
-	// you code goes here
-};
+solution = (arr_val, arr_unit) => {};
+
+console.log(solution());
