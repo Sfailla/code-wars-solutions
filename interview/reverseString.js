@@ -22,3 +22,15 @@ const reverse = str => {
 
 reverse('hello');
 console.log(reverse('hello'));
+
+function reverseString(s) {
+	let string = '';
+
+	for (let i = s.length - 1; i > 0; i--) {
+		string += s[i];
+	}
+	return string;
+}
+
+s('hello');
+console.log(s('hello'));
