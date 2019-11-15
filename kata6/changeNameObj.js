@@ -11,7 +11,7 @@ function NamedOne(first, last) {
 	this.lastName = last;
 	Object.defineProperty(this, 'fullName', {
 		get: function() {
-			return this.firstName + ' ' + this.lastName;
+			return `${this.firstName} ${this.lastName}`;
 		},
 		set: function(name) {
 			name = name.split(' ');
