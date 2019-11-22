@@ -6,7 +6,6 @@ function clean(arr) {
 			array.push(val);
 		}
 	});
-
 	return array;
 }
 
