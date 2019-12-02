@@ -35,4 +35,4 @@ function rowSumOddNumbers(n) {
 	}
 }
 
-console.log(rowSumOddNumbers('s')); // 27
+console.log(rowSumOddNumbers(5)); //
