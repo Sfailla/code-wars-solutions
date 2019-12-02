@@ -1,24 +1,21 @@
 function getMiddle(s) {
 	//Code goes here!
-
+	// split string into array of letters;
 	let element = [ ...s ];
 	let sliced, len;
 
 	len = element.length;
 
-	console.log(element);
+	len % 2 === 0
+		? (sliced = element.slice(len / 2 - 1, len / 2 + 1))
+		: (sliced = element.slice(
+				Math.round(len / 2 - 1),
+				Math.round(len / 2)
+			));
 
-	if (len % 2 === 0) {
-		console.log('needs to remove 2');
-		sliced = element.slice(len / 2 - 1, len / 2 + 1);
-	} else {
-		console.log('remove 1');
-		element = element.slice(4);
-	}
+	let answer = sliced.join('');
 
-	console.log(element);
-
-	return s;
+	return answer;
 }
 
 console.log(getMiddle('testing')); // es
