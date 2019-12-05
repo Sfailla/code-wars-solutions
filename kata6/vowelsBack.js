@@ -8,22 +8,22 @@
 */
 
 function vowelBack(s) {
+	// assign placeholder variables to store values we need
 	const alphabet = 'abcdefghijklmnopqrstuvwxyz';
 	const splitLetters = [ ...alphabet ];
 	const splitString = [ ...s ];
 	const vowels = 'aiu';
-	let result;
 	let array = [];
-
+	let result;
+	// store alphabet and ascii values as key val pairs in obj
 	let placeholder = splitLetters.reduce((acc, val, i) => {
 		acc[val] = alphabet.charCodeAt(i);
 		return acc;
 	}, {});
-
+	// implement helper function that compares the ascii range to the legend and
+	// shift letter values accordingly
 	let checkLetterRange = function letterRange(total, object) {
-		const specialLetters = [ ...'code' ];
-		const originalTotal = total;
-		if (total > 97 && total < 122) {
+		if (total >= 97 && total <= 122) {
 			result = Object.keys(object).find(keys => {
 				return object[keys] === total;
 			});
@@ -41,43 +41,82 @@ function vowelBack(s) {
 			result = Object.keys(object).find(keys => {
 				return object[keys] === newTotal;
 			});
-			let results = specialLetters.includes(result)
-				? originalTotal
-				: result;
-			console.log(results);
-			return results;
+			return result;
 		}
 	};
-
+	// implement another helper function to keep code DRY.
+	const checkAgainstLegend = function computeData(
+		total,
+		object,
+		originalLet,
+		specialLet,
+		arr
+	) {
+		const result = checkLetterRange(total, object);
+		const results = specialLet.includes(result)
+			? originalLet
+			: result;
+		arr.push(results);
+	};
+	// final evaluation where we map the previous letter value to the new values depending on legend
 	splitString.map(letter => {
 		for (const [ key, val ] of Object.entries(placeholder)) {
 			if (letter === key) {
+				const specialLetters = [ ...'code' ];
+				const originalLetter = letter;
+
 				if ([ ...vowels ].indexOf(letter) > -1) {
 					const total = val - 5;
-					array.push(checkLetterRange(total, placeholder));
+					checkAgainstLegend(
+						total,
+						placeholder,
+						originalLetter,
+						specialLetters,
+						array
+					);
 				} else if (letter === 'c' || letter === 'o') {
-					// move back 1 space
 					const total = val - 1;
-					array.push(checkLetterRange(total, placeholder));
+					checkAgainstLegend(
+						total,
+						placeholder,
+						originalLetter,
+						specialLetters,
+						array
+					);
 				} else if (letter === 'd') {
 					const total = val - 3;
-					array.push(checkLetterRange(total, placeholder));
-					// move back 3 space
+					checkAgainstLegend(
+						total,
+						placeholder,
+						originalLetter,
+						specialLetters,
+						array
+					);
 				} else if (letter === 'e') {
 					const total = val - 4;
-					array.push(checkLetterRange(total, placeholder));
-					// move back 4 space
+					checkAgainstLegend(
+						total,
+						placeholder,
+						originalLetter,
+						specialLetters,
+						array
+					);
 				} else {
-					// move forward 9
 					const total = val + 9;
-					array.push(checkLetterRange(total, placeholder));
+					checkAgainstLegend(
+						total,
+						placeholder,
+						originalLetter,
+						specialLetters,
+						array
+					);
 				}
 			}
 		}
 	});
-
-	console.log(array);
-	return s;
+	// join and return the answer
+	const answer = array.join('');
+	return answer;
 }
 
 console.log(vowelBack('testcase')); // "tabtbvba"
