@@ -15,7 +15,8 @@ function NamedOne(first, last) {
 		},
 		set: function(name) {
 			name = name.split(' ');
-			if (name.length != 2) throw new Error('I cannot parse that name');
+			if (name.length != 2)
+				throw new Error('I cannot parse that name');
 			this.firstName = name[0];
 			this.lastName = name[1];
 		}

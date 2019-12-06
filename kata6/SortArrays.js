@@ -8,7 +8,6 @@ const sortme = function(names) {
 			array.push(el.toLowerCase());
 			return el.toLowerCase();
 		}
-		return el;
 	};
 
 	let mapped = names.map((element, i) => {
@@ -30,6 +29,8 @@ const sortme = function(names) {
 	return sorted;
 };
 
-console.log(sortme([ 'Hello', 'there', "I'm", 'fine' ])); // [	'fine', 'Hello', "I'm", 'there']
+// [	'fine', 'Hello', "I'm", 'there']
+console.log(sortme([ 'Hello', 'there', "I'm", 'fine' ]));
 
-console.log(sortme([ 'C', 'd', 'a', 'B' ])); //  [ 'a', 'B', 'C', 'd' ]
+//  [ 'a', 'B', 'C', 'd' ]
+console.log(sortme([ 'C', 'd', 'a', 'B' ]));
