@@ -2,23 +2,13 @@ function interpolate(points) {
 	// Your code here
 
 	let a, b, c;
+	let map = {};
 
 	function reduceArray(array) {
 		let arr = [];
-		array.map((val, i) => {
-			a = points[i];
-			b = points[i + 1];
-			if (a < points.length) {
-				c = b - a;
-				arr.push(c);
-			}
-		});
-		return arr;
-	}
 
-	let res = reduceArray(points);
-	let res2 = reduceArray(res);
-	console.log(res2);
+		points.reduce((acc, val, i) => {});
+	}
 
 	return points;
 }
