@@ -1,14 +1,37 @@
 function interpolate(points) {
 	// Your code here
+	let map = [];
 
-	let a, b, c;
-	let map = {};
-
-	function reduceArray(array) {
-		let arr = [];
-
-		points.reduce((acc, val, i) => {});
+	function helpInterpolate(array) {
+		let a, b, c;
+		let reduced = array.reduce((acc, val, i, arr) => {
+			a = arr[i];
+			b = arr[i + 1];
+			if (a < arr.length) {
+				c = b - a;
+				acc.push(c);
+			}
+			return acc;
+		}, []);
+		return reduced;
 	}
+
+	function interpolateMap(array) {
+		let result = [];
+
+		array.map((val, i) => {
+			console.log(helpInterpolate(array));
+		});
+	}
+
+	interpolateMap(points);
+
+	let res = helpInterpolate(points);
+	let res2 = helpInterpolate(res);
+	let res3 = helpInterpolate(res2);
+
+	let mapp = [ points, res, res2, res3 ];
+	console.log(mapp);
 
 	return points;
 }
