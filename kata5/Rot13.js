@@ -14,8 +14,7 @@ function rot13(message) {
 		return codeArray;
 	};
 
-	// set a var for the result from getCodesFromLetters function
-	// so we can plug it in the next function
+	// create var for new values
 	const codes = getCodesFromLetters(message);
 	// create a function that takes the numbers array and
 	// makes necessary calculations
