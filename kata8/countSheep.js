@@ -1,15 +1,7 @@
 console.log('count sheep');
 
 function countSheeps(arr) {
-	let newArr = [];
-	arr.filter(val => {
-		if (val) {
-			newArr.push(val);
-		}
-	});
-	let result = newArr.length;
-
-	return result;
+	return arr.filter(val => val).length;
 }
 
 const sheep = [
@@ -39,4 +31,4 @@ const sheep = [
 	true
 ];
 
-countSheeps(sheep);
+console.log(countSheeps(sheep), 17);
