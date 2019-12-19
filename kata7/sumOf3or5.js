@@ -9,6 +9,7 @@ findSum(10) should return 33 (3 + 5 + 6 + 9 + 10)
 */
 
 const findSum = n => {
+	// store answer here
 	let answer = [];
 
 	for (let i = 0; i <= n; i++) {
