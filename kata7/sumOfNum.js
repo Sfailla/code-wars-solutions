@@ -17,7 +17,7 @@ function getSum(a, b) {
 		// return the value of all the numbers in the range
 		return result.reduce((acc, val) => {
 			return val + acc;
-		});
+		}, 0);
 	}
 }
 
