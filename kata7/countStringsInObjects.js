@@ -4,11 +4,15 @@ function strCount(obj) {
 	const stringVals = [];
 	const extractedVals = [];
 
-	obj;
-
 	let array = Object.values(obj);
 
 	extractedVals.push(array);
+
+	extractedVals.map(item => {
+		if (typeof item === 'object') {
+			item;
+		}
+	});
 
 	const flatten = ary =>
 		ary.reduce(
@@ -20,18 +24,16 @@ function strCount(obj) {
 
 	flat;
 
-	const mapped = flat.map((item, i) => {
-		if (item && typeof item === 'object') {
-			let vals = Object.values(item);
-			vals;
-			stringVals.push(vals);
-		} else if (typeof item === 'string') {
-			stringVals.push(item);
-			return item;
-		}
-	});
+	// const mapped = flat.map((item, i) => {
+	// 	if (item && typeof item === 'object') {
+	// 		let vals = Object.values(item);
 
-	flat;
+	// 		stringVals.push(vals);
+	// 	} else if (typeof item === 'string') {
+	// 		stringVals.push(item);
+	// 		return item;
+	// 	}
+	// });
 
 	const stringCount = stringVals.length;
 	return stringCount;
