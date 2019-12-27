@@ -1,42 +1,16 @@
 function strCount(obj) {
 	// Your code here
+	if (typeof obj == 'string') return 1;
 
-	const stringVals = [];
-	const extractedVals = [];
+	var count = 0;
 
-	let array = Object.values(obj);
+	for (var prop in obj) {
+		if (typeof obj[prop] == 'string') count++;
+		else if (typeof obj[prop] == 'object')
+			count += strCount(obj[prop]);
+	}
 
-	extractedVals.push(array);
-
-	extractedVals.map(item => {
-		if (typeof item === 'object') {
-			item;
-		}
-	});
-
-	const flatten = ary =>
-		ary.reduce(
-			(a, b) => a.concat(Array.isArray(b) ? flatten(b) : b),
-			[]
-		);
-
-	const flat = flatten(extractedVals);
-
-	flat;
-
-	// const mapped = flat.map((item, i) => {
-	// 	if (item && typeof item === 'object') {
-	// 		let vals = Object.values(item);
-
-	// 		stringVals.push(vals);
-	// 	} else if (typeof item === 'string') {
-	// 		stringVals.push(item);
-	// 		return item;
-	// 	}
-	// });
-
-	const stringCount = stringVals.length;
-	return stringCount;
+	return count;
 }
 
 console.log(
