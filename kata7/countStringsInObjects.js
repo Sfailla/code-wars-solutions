@@ -3,7 +3,7 @@ function strCount(obj) {
 	if (typeof obj == 'string') return 1;
 
 	var count = 0;
-
+	// gotta figure out why this works.
 	for (var prop in obj) {
 		if (typeof obj[prop] == 'string') count++;
 		else if (typeof obj[prop] == 'object')
