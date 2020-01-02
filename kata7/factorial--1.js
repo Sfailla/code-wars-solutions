@@ -1,5 +1,5 @@
 function factorial(n) {
-	if (n > 12 || n < 0) {
+	if (n > 20 || n < 0) {
 		return 'RangeError';
 	} else {
 		let answer = 1;
@@ -12,4 +12,4 @@ function factorial(n) {
 	}
 }
 
-console.log(factorial(13));
+console.log(factorial(12));
