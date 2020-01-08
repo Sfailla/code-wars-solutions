@@ -14,7 +14,7 @@ function rank(card) {
 		const isNumber = /[0-9]/g;
 		const isLetter = /[A-Z]/g;
 
-		const cardValues = {
+		const cardLetterValues = {
 			T: 10,
 			J: 11,
 			Q: 12,
@@ -25,8 +25,8 @@ function rank(card) {
 		if (cardVal < 2) return 0;
 		if (cardVal.match(isNumber) && cardVal > 1) return cardVal;
 		if (cardVal.match(isLetter)) {
-			if (Object.keys(cardValues).includes(cardVal)) {
-				return cardValues[cardVal];
+			if (Object.keys(cardLetterValues).includes(cardVal)) {
+				return cardLetterValues[cardVal];
 			}
 		}
 
