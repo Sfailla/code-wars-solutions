@@ -55,6 +55,20 @@ Array.prototype.groupBy = function(fn) {
 	}
 };
 
+// refactored version of above (better performance)
+Array.prototype.groupBy = function(fn) {
+	return this.reduce((obj, item) => {
+		if (!fn) {
+			let val = (obj[item] = obj[item] || []);
+			val.push(item);
+			return obj;
+		} else {
+			(obj[fn(item)] = obj[fn(item)] || []).push(item);
+			return obj;
+		}
+	}, {});
+};
+
 console.log(
 	JSON.stringify([ 1, 2, 3, 2, 4, 1, 5, 1, 6 ].groupBy()),
 	'{"1":[1,1,1],"2":[2,2],"3":[3],"4":[4],"5":[5],"6":[6]}'
