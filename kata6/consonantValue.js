@@ -1,8 +1,9 @@
 function solve(s) {
 	let letterArr = 'abcdefghijklmnopqrstuvwxyz'.split('');
+
 	let constStringsArr = s.split(/[aeiou]+/gi);
 
-	console.log(constStringsArr.filter(Boolean));
+	constStringsArr;
 }
 
 solve('zodiacs'); // === 26
