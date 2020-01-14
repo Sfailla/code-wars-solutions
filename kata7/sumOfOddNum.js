@@ -1,38 +1,34 @@
 function rowSumOddNumbers(n) {
-	// TODO
-	let num = 10000;
-	let oddNum = [];
-	let arr = [];
+	// code
+	let oddNumbers = [];
+	let oddNums = num => num % 2 !== 0;
 
-	for (let i = 0; i <= num; i++) {
-		if (i % 2 !== 0) {
-			oddNum.push(i);
+	for (let i = 0; i <= 100; i++) {
+		if (oddNums(i)) {
+			oddNumbers.push(i);
 		}
 	}
 
-	oddNum.map((val, idx) => {
-		arr.push(oddNum.splice(0, idx + 1));
-		return arr;
-	});
+	function formatItems(oddN) {
+		const arr = [];
+		let count = 1;
+		for (let i = 0; i < oddN.length; i++) {
+			let arrays = Array.from({ length: count++ });
+			arrays;
+		}
+	}
+	formatItems(oddNumbers);
 
-	let reduced = arr.reduce((acc, val, i) => {
-		let idx = i + 1;
-		acc[idx] = val;
-		return acc;
+	let object = oddNumbers.reduce((obj, items, index) => {
+		obj[index++] = items;
+		return obj;
 	}, {});
 
-	let realObj = Object.assign({}, reduced);
-	if (typeof n === 'number') {
-		let result = realObj[n];
+	object;
 
-		let answer = result.reduce((acc, val) => {
-			return acc + val;
-		}, 0);
-
-		return answer;
-	} else {
-		return 'not a number';
-	}
+	return n;
 }
 
-console.log(rowSumOddNumbers(5)); //
+console.log(rowSumOddNumbers(1), 1);
+console.log(rowSumOddNumbers(3), 27);
+console.log(rowSumOddNumbers(42), 74088);
