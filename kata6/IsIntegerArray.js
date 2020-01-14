@@ -7,7 +7,7 @@ function isIntArray(arr) {
 	)
 		return false;
 
-	const isInt = n => n % 1 === 0;
+	// const isInt = n => n % 1 === 0;
 
 	let filtered = arr.filter(val => {
 		let isInt = Number.isInteger(val);
