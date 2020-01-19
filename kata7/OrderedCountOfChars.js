@@ -1,16 +1,5 @@
 var orderedCount = function(text) {
 	// Implement me!
-
-	// text = text.split('');
-
-	// let reduce = text.reduce((obj, letters) => {
-	// 	obj[letters] = obj[letters] || 0;
-	// 	obj[letters]++;
-	// 	return obj;
-	// }, {});
-
-	// return Object.entries(reduce);
-
 	text = text.split('');
 	let map = {};
 
@@ -21,11 +10,6 @@ var orderedCount = function(text) {
 		map[el]++;
 	}
 
-	// if (typeof Object.keys(map) === 'number') {
-	// 	console.log('yes');
-	// } else {
-	// 	console.log('no');
-	// }
 	map;
 
 	return map;
