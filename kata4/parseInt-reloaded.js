@@ -71,7 +71,6 @@ function parseInt(string) {
 	});
 
 	const sumOfNumbers = array => {
-		array;
 		if (array.length > 1 && array.length < 4) {
 			return array.reduce((acc, val) => {
 				return acc + val;
@@ -84,7 +83,6 @@ function parseInt(string) {
 	};
 
 	const sum = sumOfNumbers(numbersForWords);
-	sum;
 
 	return sum;
 }
