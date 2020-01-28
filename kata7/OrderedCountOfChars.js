@@ -1,18 +1,20 @@
 var orderedCount = function(text) {
 	// Implement me!
 	text = text.split('');
-	let map = {};
+	let arr = [];
+	let count = 0;
 
 	for (let i = 0; i < text.length; i++) {
-		let el = text[i];
+		const el = text[i];
 
-		map[el] = map[el] || 0;
-		map[el]++;
+		if (arr.indexOf(el) === -1) {
+			arr.push(el);
+		}
 	}
 
-	map;
+	arr;
 
-	return map;
+	return arr;
 };
 
 const examples = [
