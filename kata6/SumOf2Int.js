@@ -47,19 +47,29 @@ function add(x, y) {
 	if (x >= 0 && y >= 0) {
 		let arr1 = Array(x).fill(x);
 		let arr2 = Array(y).fill(y);
-
 		let array = arr1.concat(arr2);
 		return array.length;
 	} else if (x < 0 && y < 0) {
 		let posX = Number(x.toString().split('').slice(1).join(''));
 		let posY = Number(y.toString().split('').slice(1).join(''));
-
+		let dash = y.toString().split('')[0];
 		let arr1 = Array(posX).fill(posX);
 		let arr2 = Array(posY).fill(posY);
-
 		let array = arr1.concat(arr2);
-		return array.length;
+		return Number([ dash, array.length ].join(''));
+	} else if (x < 0 && y >= 0) {
+		let posX = Number(x.toString().split('').slice(1).join(''));
+		let dash = x.toString().split('')[0];
+		let arr1 = Array(posX).fill(posX);
+		let sliced = arr1.slice(y).length;
+		return Number([ dash, sliced ].join(''));
 	}
 }
 
-console.log(add(-7, -13), 20);
+function add(x, y) {
+	const getSum = (a, b) => (b ? getSum(a ^ b, (a & b) << 1) : a);
+	const total = getSum(x, y);
+	return total;
+}
+
+console.log(add(-90, 30), -60);
