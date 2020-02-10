@@ -6,8 +6,6 @@ function errBob(string) {
 
 	split.map(str => {});
 
-	// console.log(answer);
-
 	return answer.join(' ');
 }
 
