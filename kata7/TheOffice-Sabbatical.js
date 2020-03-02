@@ -1,3 +1,13 @@
+/*
+
+params//
+val=your value to the organisation
+happ=her happiness level at the time of asking and finally
+x=The numbers of letters from 'sabbatical' that are present 
+in string 'x'.
+
+*/
+
 function sabb(x, val, happ) {
 	let letters = 'sabbatical';
 	const numbersToAdd = [];
