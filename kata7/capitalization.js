@@ -1,36 +1,12 @@
 function capitalize(s) {
-	let arr = s.split(''),
-		arr1,
-		arr2,
-		finalArr;
+	let odd = [ ...s ]
+		.map((v, i) => (i % 2 !== 0 ? v.toUpperCase() : v))
+		.join('');
+	let even = [ ...s ]
+		.map((v, i) => (i % 2 === 0 ? v.toUpperCase() : v))
+		.join('');
 
-	function alternateCapitalization(array, evenOrOdd) {
-		let arr = [];
-		array.map((letter, idx) => {
-			if (evenOrOdd === 'even') {
-				if (idx % 2 === 0) {
-					arr.push(letter.toUpperCase());
-				} else {
-					arr.push(letter);
-				}
-			} else if (evenOrOdd === 'odd') {
-				if (idx % 2 !== 0) {
-					arr.push(letter.toUpperCase());
-				} else {
-					arr.push(letter);
-				}
-			}
-		});
-
-		return arr.join('');
-	}
-
-	arr1 = alternateCapitalization(arr, 'even');
-	arr2 = alternateCapitalization(arr, 'odd');
-
-	finalArr = [ arr1, arr2 ];
-
-	return finalArr;
+	return [ even, odd ];
 }
 
 console.log(capitalize('abcdef'), [ 'AbCdEf', 'aBcDeF' ]);
