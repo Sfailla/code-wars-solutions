@@ -16,8 +16,8 @@ function multiply(a, b) {
 	};
 }
 
-function apply(x) {
-	return x;
+function apply(fn) {
+	return fn;
 }
 
 console.log(add(3)(4), 7);
