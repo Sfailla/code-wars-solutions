@@ -1,7 +1,5 @@
 var FindFunction = function(func, arr) {
-	return arr.filter(
-		a => a && func.filter(v => typeof v === 'function')[0](a)
-	);
+	return arr.filter(func.filter(v => typeof v === 'function')[0]);
 };
 
 console.log(
