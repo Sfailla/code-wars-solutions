@@ -6,7 +6,6 @@ function abundantNumber(num) {
 				numToTotal.push(i);
 			}
 		}
-
 		return numToTotal;
 	}
 
