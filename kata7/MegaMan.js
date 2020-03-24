@@ -19,27 +19,34 @@ let bosses = [
 ];
 
 function getBossOrder(bosses) {
-	function findWeakness(currentBoss, bosses) {
+	let count = 1;
+	function findWeakness(currentBoss) {
+		let bossList = [];
+
+		if (bossList.indexOf(currentBoss) === -1) {
+			bossList.push(currentBoss);
+		}
+
+		console.log(currentBoss);
+		bossList;
+
 		return bosses.map(boss => {
-			if (currentBoss.weapon === boss.weakness) {
-				return boss;
+			if (
+				currentBoss.weapon === boss.weakness &&
+				count < bosses.length
+			) {
+				count++;
+				findWeakness(boss);
+			} else {
+				return bossList;
 			}
 		});
 	}
 
-	let finalArr = [];
+	let firstBoss = bosses.filter(boss => boss.difficulty === 1)[0];
+	firstBoss;
 
-	for (let boss of bosses) {
-		let currentBoss;
-		if (boss.difficulty === 1) {
-			currentBoss = boss;
-			finalArr.push(currentBoss);
-			let { Boss } = findWeakness(currentBoss, bosses);
-			Boss;
-		}
-	}
-
-	finalArr;
+	findWeakness(firstBoss);
 
 	return bosses[0];
 }
