@@ -19,36 +19,20 @@ let bosses = [
 ];
 
 function getBossOrder(bosses) {
-	let count = 1;
-	function findWeakness(currentBoss) {
-		let bossList = [];
-
-		if (bossList.indexOf(currentBoss) === -1) {
-			bossList.push(currentBoss);
-		}
-
-		console.log(currentBoss);
-		bossList;
-
-		return bosses.map(boss => {
-			if (
-				currentBoss.weapon === boss.weakness &&
-				count < bosses.length
-			) {
-				count++;
-				findWeakness(boss);
-			} else {
-				return bossList;
-			}
-		});
-	}
-
-	let firstBoss = bosses.filter(boss => boss.difficulty === 1)[0];
-	firstBoss;
-
-	findWeakness(firstBoss);
-
-	return bosses[0];
+	// set weapon to null
+	let weapon = null;
+	// loop thru bosses
+	return bosses.map(boss => {
+		// filter bosses with conditions
+		let nextBoss = bosses.filter(
+			// first time around the second part of the turnary is activated
+			x => (weapon ? x.weakness === weapon : x.difficulty === 1)
+		)[0];
+		// next assign weapon a value of nextBoss.weapon
+		weapon = nextBoss.weapon;
+		// now that list is in correct order return names
+		return nextBoss.name;
+	});
 }
 
 console.log(getBossOrder(bosses), [
