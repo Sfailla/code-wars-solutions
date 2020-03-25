@@ -25,7 +25,8 @@ function getBossOrder(bosses) {
 	return bosses.map(boss => {
 		// filter bosses with conditions
 		let nextBoss = bosses.filter(
-			// first time around the second part of the turnary is activated
+			// first boss is the boss with difficulty === 1.
+			// once first boss is established, we look for weapon === weakness
 			x => (weapon ? x.weakness === weapon : x.difficulty === 1)
 		)[0];
 		// next assign weapon a value of nextBoss.weapon
