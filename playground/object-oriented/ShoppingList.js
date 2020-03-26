@@ -29,6 +29,10 @@ class ShoppingList {
 		});
 		this.items = newArr;
 	}
+
+	showAllItems() {
+		return this.items;
+	}
 }
 
 class ShoppingListItem {
@@ -46,10 +50,11 @@ const myShoppingList = new ShoppingList([
 
 // adding a single item
 myShoppingList.addItem(new ShoppingListItem('cookies', 2.99));
+myShoppingList;
 // removing a single item
 myShoppingList.removeItem('eggs');
 // edit a single item
 myShoppingList.editItem('milk', { name: 'rice', price: 1.99 });
 myShoppingList.editItem('cookies', { name: 'doritos', price: 5.99 });
 
-myShoppingList;
+myShoppingList.showAllItems();
