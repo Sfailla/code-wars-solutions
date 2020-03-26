@@ -10,14 +10,8 @@ class ShoppingList {
 	editItem(itemName, newItem) {
 		this.items.find(item => {
 			if (item.name === itemName) {
-				let editItem = {
-					name: newItem.name ? newItem.name : null,
-					price: newItem.price ? newItem.price : null
-				};
-				item.name =
-					editItem.name === null ? item.name : editItem.name;
-				item.price =
-					editItem.price === null ? item.price : editItem.price;
+				item.name = newItem.name || item.name;
+				item.price = newItem.price || item.price;
 			}
 		});
 	}
@@ -58,3 +52,5 @@ myShoppingList.editItem('milk', { name: 'rice', price: 1.99 });
 myShoppingList.editItem('cookies', { name: 'doritos', price: 5.99 });
 
 myShoppingList.showAllItems();
+
+myShoppingList;
