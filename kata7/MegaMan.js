@@ -36,6 +36,19 @@ function getBossOrder(bosses) {
 	});
 }
 
+function getBossOrder(bosses) {
+	let weapon = null;
+
+	return bosses.map(_ => {
+		let nextBoss = bosses.filter(
+			x => (weapon ? x.weakness === weapon : x.difficulty === 1)
+		)[0];
+
+		weapon = nextBoss.weapon;
+		return nextBoss.name;
+	});
+}
+
 console.log(getBossOrder(bosses), [
 	'Metal Man',
 	'Bubble Man',
