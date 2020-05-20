@@ -17,3 +17,5 @@ Object.setPrototypeOf(obj, protoObj);
 
 // now the lastName prop will be applied once it is found on the prototype chani
 console.log(obj.lastName);
+
+// javascript doesn't have classes so it uses prototypes instead
