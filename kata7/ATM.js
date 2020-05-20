@@ -32,7 +32,7 @@ function solve(n) {
 }
 
 console.log(solve(770), 4, 'Wrong result for 770');
-// console.log(solve(550), 2, 'Wrong result for 550');
-// console.log(solve(10), 1, 'Wrong result for 10');
-// console.log(solve(1250), 4, 'Wrong result for 1250');
-// console.log(solve(5000), 10, 'Wrong result for 5000');
+console.log(solve(550), 2, 'Wrong result for 550');
+console.log(solve(10), 1, 'Wrong result for 10');
+console.log(solve(1250), 4, 'Wrong result for 1250');
+console.log(solve(5000), 10, 'Wrong result for 5000');
