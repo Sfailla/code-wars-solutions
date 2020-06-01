@@ -1,8 +1,5 @@
 function map(head, f) {
-	return {
-		f,
-		...head
-	};
+	return !head ? [] : new Node(f(head.data), map(head.next, f));
 }
 
 function listToArray(head) {
