@@ -1,17 +1,11 @@
 function multiples(m, n) {
-	console.log('m => ', m);
-	console.log('n => ', n);
-
 	const array = [];
-	const total = n * m;
-	total;
 
-	for (let i = n; i <= total; i++) {
-		i;
-		array.push(i);
+	for (let i = 1; i <= m; i++) {
+		array.push(i * n);
 	}
-	array;
+
 	return array;
 }
 
-console.log(multiples(-1, 5), [ 5, 10, 15 ]);
+console.log(multiples(3, 5), [ 5, 10, 15 ]);
