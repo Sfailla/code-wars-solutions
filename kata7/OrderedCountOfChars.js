@@ -1,32 +1,28 @@
-var orderedCount = function(text) {
+let orderedCount = function(text) {
 	// Implement me!
-	text = text.split('');
-	let arr = [];
 	let count = 0;
-
-	for (let i = 0; i < text.length; i++) {
-		const el = text[i];
-
-		if (arr.indexOf(el) === -1) {
-			arr.push(el);
+	let textArray = text.split('');
+	let mapped = {};
+	textArray.map((val, idx) => {
+		if (textArray.indexOf(val) === idx) {
 		}
-	}
 
-	arr;
+		val;
+	});
 
-	return arr;
+	mapped;
 };
 
 const examples = [
 	// [
 	// 	'abracadabra',
 	// 	[ [ 'a', 5 ], [ 'b', 2 ], [ 'r', 2 ], [ 'c', 1 ], [ 'd', 1 ] ]
-	// ],
-	// [
+	// ],  nnn
+	// [gsfsfhgdgg
 	// 	'Code Wars',
 	// 	[
 	// 		[ 'C', 1 ],
-	// 		[ 'o', 1 ],
+	// 		[ 'o', 1  ],
 	// 		[ 'd', 1 ],
 	// 		[ 'e', 1 ],
 	// 		[ ' ', 1 ],
@@ -40,11 +36,18 @@ const examples = [
 ];
 
 const it = (string, cb) => {
-	return {
-		text: () => string,
-		func: (...args) => cb(...args)
-	};
+	if (string || cb)
+		return {
+			string,
+			cb: cb()
+		};
 };
+
+const add = (a, b) => a + b;
+
+it('this is text', () => {
+	return add(3, 4);
+});
 
 for (const [ text, expected ] of examples) {
 	it(`text: ${text} `, () => {
