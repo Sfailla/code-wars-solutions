@@ -6,11 +6,7 @@ let orderedCount = function(text) {
 	textArray.map((val, idx) => {
 		if (textArray.indexOf(val) === idx) {
 		}
-
-		val;
 	});
-
-	mapped;
 };
 
 const examples = [
