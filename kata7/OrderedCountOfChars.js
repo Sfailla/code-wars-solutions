@@ -2,11 +2,16 @@ let orderedCount = function(text) {
 	// Implement me!
 	let count = 0;
 	let textArray = text.split('');
-	let mapped = {};
+	let letterArray = [];
+
 	textArray.map((val, idx) => {
-		if (textArray.indexOf(val) === idx) {
-		}
+		let newVal = letterArray.indexOf(val) == -1;
+
+		let keyVal = [ val ];
+
+		keyVal;
 	});
+	mapped;
 };
 
 const examples = [
@@ -14,20 +19,20 @@ const examples = [
 		'abracadabra',
 		[ [ 'a', 5 ], [ 'b', 2 ], [ 'r', 2 ], [ 'c', 1 ], [ 'd', 1 ] ]
 	],
-	[
-		'Code Wars',
-		[
-			[ 'C', 1 ],
-			[ 'o', 1 ],
-			[ 'd', 1 ],
-			[ 'e', 1 ],
-			[ ' ', 1 ],
-			[ 'W', 1 ],
-			[ 'a', 1 ],
-			[ 'r', 1 ],
-			[ 's', 1 ]
-		]
-	],
+	// [
+	// 	'Code Wars',
+	// 	[
+	// 		[ 'C', 1 ],
+	// 		[ 'o', 1 ],
+	// 		[ 'd', 1 ],
+	// 		[ 'e', 1 ],
+	// 		[ ' ', 1 ],
+	// 		[ 'W', 1 ],
+	// 		[ 'a', 1 ],
+	// 		[ 'r', 1 ],
+	// 		[ 's', 1 ]
+	// 	]
+	// ],
 	[ '212', [ [ '2', 2 ], [ '1', 1 ] ] ]
 ];
 
@@ -46,8 +51,7 @@ it('this is text', () => {
 });
 
 for (const [ text, expected ] of examples) {
-	it(`text: ${text} `, () => {
-		// something
+	it(`text: ${JSON.stringify(text)} `, () => {
+		console.log(orderedCount(text), expected);
 	});
-	console.log(orderedCount(text), expected);
 }
