@@ -3,15 +3,11 @@ let orderedCount = function(text) {
 	let count = 0;
 	let textArray = text.split('');
 	let letterArray = [];
+	let mapped = {};
 
 	textArray.map((val, idx) => {
-		let newVal = letterArray.indexOf(val) == -1;
-
-		let keyVal = [ val ];
-
-		keyVal;
+		// do something
 	});
-	mapped;
 };
 
 const examples = [
