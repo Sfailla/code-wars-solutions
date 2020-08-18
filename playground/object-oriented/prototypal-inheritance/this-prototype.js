@@ -12,7 +12,7 @@ Foo.prototype.myName = function() {
 
 function Bar(name) {
 	// Foo(name)
-	// we have to call and apply this to obj to avoid errors
+	// we have to call and apply this to obj to rebind this
 	Foo.call(this, name);
 }
 

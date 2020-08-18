@@ -7,7 +7,11 @@ const protoObj = {
 	hair: 'brown'
 };
 
-Object.setPrototypeOf(obj, protoObj);
+const extendedObj = Object.setPrototypeOf(obj, protoObj);
+
+// now that prototype is set we can access the property like so
+console.log(obj.hair);
+console.log(extendedObj.hair);
 
 let n = 0;
 
