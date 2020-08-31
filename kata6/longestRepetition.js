@@ -1,10 +1,14 @@
 function longestRepetition(s) {
-	let i = 0;
 	let seq = 0;
 	let results = [];
 	let largest = 0;
 	let answer = [];
 
+	if (s === '') {
+		return [ '', 0 ];
+	}
+
+	let i = 0;
 	while (i < s.length) {
 		let current = s[i];
 		let next = s[i + 1];
@@ -18,7 +22,6 @@ function longestRepetition(s) {
 		if (current !== next) {
 			seq++;
 		}
-
 		i++;
 	}
 	results.forEach(arr => {
