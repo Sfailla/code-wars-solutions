@@ -1,25 +1,30 @@
 function wordPattern(word) {
 	let count = 0;
-	let obj = {};
+	const obj = {};
 	word = [ ...word.toLowerCase() ];
 
-	return word.reduce((array, letter) => {
-    let res = obj[letter] === undefined ?
-      (obj[letter] = count++) : obj[letter];
+	return word
+		.reduce((array, letter) => {
+			const res =
+				obj[letter] === undefined
+					? (obj[letter] = count++)
+					: obj[letter];
 
-    array.push(res);
-    return array;
-  }, []).join('.');
+			array.push(res);
+			return array;
+		}, [])
+		.join('.');
 }
 
 // very nice short answer from codewars
 function wordPattern(word) {
-  let pos = 0;
-  let lookup = {};
-  debugger;
-  return [ ...word.toLowerCase() ]
-    .map(char => char in lookup ? lookup[char] : lookup[char] = pos++)
-    .join('.');
+	let pos = 0;
+	let lookup = {};
+	return [ ...word.toLowerCase() ]
+		.map(
+			char => (char in lookup ? lookup[char] : (lookup[char] = pos++))
+		)
+		.join('.');
 }
 
 console.log(wordPattern('hello'), '0.1.2.2.3');
