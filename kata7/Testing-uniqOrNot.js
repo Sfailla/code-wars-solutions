@@ -9,9 +9,11 @@ function testit(a, b) {
 			finalArr.sort();
 		}
 	});
-
 	return finalArr;
 }
+
+// much cleaner and shorter solution!!
+const testit = (a, b) => a.concat(b).sort();
 
 console.log(testit([ 0 ], [ 1 ]), [ 0, 1 ], '');
 console.log(testit([ 1, 2 ], [ 3, 4 ]), [ 1, 2, 3, 4 ], '');
