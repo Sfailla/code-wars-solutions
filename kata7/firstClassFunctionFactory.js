@@ -22,12 +22,7 @@ fives(myArray);               //returns [5, 10, 15];
 
 function factory(x) {
 	// create a function to return from factory
-	function helper(arr) {
-		// multiply array values by value of x
-		return arr.map(val => val * x);
-	}
-	// return the function
-	return helper;
+	return arr => arr.map(val => val * x);
 }
 
 const myArray = [ 1, 2, 3 ];
