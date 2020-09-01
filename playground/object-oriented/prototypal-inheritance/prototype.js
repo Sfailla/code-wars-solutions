@@ -40,7 +40,7 @@ steve.greet() === maria.greet(); // false... they are 2 diff objects
 
 // GOOD
 // to not pollute global namespace we can wrap in an IIFE
-let personFactory = (function() {
+let personFactory = (function IIFE() {
 	let personPrototype = {
 		greet: function(person) {
 			return `Hello, ${person.firstName} ${person.lastName}`;
