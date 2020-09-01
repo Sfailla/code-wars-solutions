@@ -1,6 +1,6 @@
 // Three things happen when the new keyword is used;
 // 1. brand new obj is created.
-// 2. the new obj is prototype linked.
+// 2. the new obj is created and prototype linked.
 // 3. the constructed obj is set as this property for that fn call
 
 function Car(make) {
