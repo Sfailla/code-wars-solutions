@@ -1,16 +1,22 @@
 /**
  * 
- * @desc STACKS => First In Last Out
+ * @description STACKS => First In Last Out
  * 
  *  Arrays are good examples of a stack
  *  they also come with methods => push, pop, peek, length
  * 
  *  basic example with array checking for palindrome
- * 
- * @desc STACKS => using array
+ /
+
+ /**
+ * @description STACKS => using array
  * 
  *  @function palindrome
- *   @param {(string|number)} word
+ *  @param {string} word<string> -- value to check for palindrome
+ * 		@var {array} letters[] -- array to hold stack values
+ * 		@var {string} message<string> -- lets user know the outcome of func
+ * 		@var {boolean} isPalindrome<boolean> -- check validity of palindrome
+ * 	@return {message|isPalindrome} -- return values
  * 
  */
 
@@ -56,18 +62,25 @@ message;
 
 /**
  * 
- * @desc STACK => using class
+ * @description STACK => using class
  * 
  * @class Stack
+ * @constructor
  *  @var {number} count -- 0 
  *  @var {object} storage -- {} 
  * 
- * @method {push} -- pushes an item into the stack
- *  @param {*} value<any> -- to add to stack
+ * @method push -- pushes an item into the stack
+ * 	@param {*} value -- to add to stack
  * 
- * @method {pop} -- removes and returns last item from the stack
- * @method {size} -- pushes an item into the stack
- * @method {push} -- pushes an item into the stack
+ * @method pop -- removes and returns last item from the stack
+ * @return {*|undefined} result|undefined -- returns popped item 
+ * 				 or undefined
+ * 	
+ * @method size -- pushes an item into the stack
+ * @return {number} this.size -- returns # of items in stack 
+ * 
+ * @method peek -- shows last item in stack
+ * @return {*|object} -- returns last itme in the stack
  * 
  */
 
