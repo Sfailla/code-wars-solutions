@@ -2,20 +2,28 @@
  * 
  * @description STACKS => First In Last Out
  * 
- *  Arrays are good examples of a stack
- *  they also come with methods => push, pop, peek, length
+ * In computer science, a stack is an abstract data type that serves as a collection 
+ * of elements, with two principal operations:
+ * push, which adds an element to the collection, and pop, which removes the most 
+ * recently added element that was not yet removed. The order in which elements 
+ * come off a stack gives rise to its alternative name, LIFO (last in, first out). 
+ * Additionally, a peek operation may give access to the top without modifying the 
+ * stack. The name "stack" for this type of structure comes from the analogy to a 
+ * set of physical items stacked on top of each other, which makes it easy to take 
+ * an item off the top of the stack, while getting to an item deeper in the stack 
+ * may require taking off multiple other items first.
  * 
- *  basic example with array checking for palindrome
  /
 
  /**
  * @description STACKS => using array
+ * 	basic example with array checking for palindrome
  * 
  *  @function palindrome
  *  @param {string} word<string> -- value to check for palindrome
- * 		@var {array} letters[] -- array to hold stack values
- * 		@var {string} message<string> -- lets user know the outcome of func
- * 		@var {boolean} isPalindrome<boolean> -- check validity of palindrome
+ * 	@const {array} letters[] -- array to hold stack values
+ * 	@let {string} message<string> -- lets user know the outcome of func
+ * 	@let {boolean} isPalindrome<boolean> -- check validity of palindrome
  * 	@return {message|isPalindrome} -- return values
  * 
  */
@@ -61,27 +69,10 @@ isPalindrome;
 message;
 
 /**
- * 
- * @description STACK => using class
- * 
  * @class Stack
- * @constructor
- *  @var {number} count -- 0 
- *  @var {object} storage -- {} 
  * 
- * @method push -- pushes an item into the stack
- * 	@param {*} value -- to add to stack
- * 
- * @method pop -- removes and returns last item from the stack
- * @return {*|undefined} result|undefined -- returns popped item 
- * 				 or undefined
- * 	
- * @method size -- pushes an item into the stack
- * @return {number} this.size -- returns # of items in stack 
- * 
- * @method peek -- shows last item in stack
- * @return {*|object} -- returns last itme in the stack
- * 
+ * @type {number} count 0 
+ * @type {object} storage {} 
  */
 
 class Stack {
@@ -89,35 +80,40 @@ class Stack {
 		this.count = 0;
 		this.storage = {};
 	}
-	// adds a value to the end of the stack
+	/** 
+	 * pushes a value to the end of the stack
+ 	 * @param {*} value the value being pushed
+	 */
 	push = value => {
-		// add value to end of object
 		this.storage[this.count] = value;
-		// increase the count
 		this.count++;
 	};
-	// removes and returns value from the end of stack
+	/**
+	 * removes and returns value from the end of stack
+	 * @param {*} result the value that was popped off stack
+	 * @return {*|boolean} if empty obj undefined is returned
+	 */
 	pop = () => {
-		// return undefined if nothing is in stack
 		if (this.count === 0) {
 			return undefined;
 		}
-		// decrement the count
 		this.count--;
-		// store result for each item in storage
 		const result = this.storage[this.count];
-		// removes the first item in stack
 		delete this.storage[this.count];
-		// return popped item
 		return result;
 	};
-	// returns the size of the stack (how many items)
+	/**
+	 * pushes an item into the stack
+ 	 * @return {number} # of items in stack 
+	 */
 	size = () => {
 		return this.count;
 	};
-	// shows the value at the end of the stack;
+	/**
+	 * shows last item in stack
+	 * @return {*|object} last itme in the stack
+	 */
 	peek = () => {
-		// return last value from stack
 		return this.storage[this.count - 1];
 	};
 }
