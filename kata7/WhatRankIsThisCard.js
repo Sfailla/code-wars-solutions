@@ -34,7 +34,7 @@ function rank(card) {
 	}
 
 	const { cardType, suite } = splitToCorrectArrayValues(card);
-	const answer = parseInt(getCardValue(cardType, suite));
+	const answer = Number(getCardValue(cardType, suite));
 
 	return answer;
 }
