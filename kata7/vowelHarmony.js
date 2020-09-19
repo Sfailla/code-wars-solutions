@@ -1,18 +1,17 @@
 function dative(word) {
-	const targetLettersNak = [ 'a', 'á', 'o', ' ó', 'u', 'ú' ];
+	const targetLettersNak = [ 'a', 'á', 'o', 'ó', 'u', 'ú' ];
 	let targetLetters = '';
-
-	if (word === 'mór') {
-		return 'mórnak';
-	}
 
 	for (let i = 0; i < word.length; ++i) {
 		let letter = word[i];
 
-		if (letter.match(/[AEIOUéíöőüűáóú]/gi)) {
+		if (letter.match(/[AEIOUáéíóúöüőű]/gi)) {
 			targetLetters += letter;
 		}
 	}
+
+	targetLetters;
+
 	const lastLetter = targetLetters[targetLetters.length - 1];
 	const addSuffix = targetLettersNak.includes(lastLetter)
 		? word + 'nak'
