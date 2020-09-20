@@ -1,38 +1,48 @@
 String.prototype.trim = function(c) {
 	// code goes here
 	const that = this;
+	let copyArray = that;
+	let checkCase;
+	let letters = Object.values(copyArray);
 
-	let letters = Object.values(that.toLocaleLowerCase());
-
-	let i = 0;
-	let j = 1;
-	that;
-	letters;
-
-	while (i < letters.length) {
-		if (letters[i] === c) {
-			i++;
-		} else {
-			i;
-			letters = letters.slice(i);
-			break;
-		}
-
-		if (letters[letters.length - j] === c) {
-			j++;
-		} else {
-		}
+	if (!c) {
+		checkCase = ' ';
+		// checkCase = c === c.toLowerCase() ? c.toUpperCase() : c;
+	} else {
+		checkCase = c.toLowerCase() || c.toUpperCase();
 	}
+	const trimRight = string => {
+		let i = 1;
+		let target = checkCase;
+		while (i < string.length) {
+			if (string[string.length - i] === target) {
+				++i;
+			} else {
+				string = string.slice(0, -i + 1);
+				break;
+			}
+		}
+		return string;
+	};
 
-	letters;
+	const trimLeft = string => {
+		let i = 0;
+		let target = checkCase;
+		while (i < string.length) {
+			if (string[i] === target) {
+				++i;
+			} else {
+				string = string.slice(i);
+				break;
+			}
+		}
+		return string;
+	};
 
-	// while ()
+	copyArray = trimLeft(letters);
+	copyArray = trimRight(copyArray);
 
-	// return letters.filter(letter => {
-	// 	return letter !== c
-	// } )
-	// .replace(c.toLowerCase(), '');
-	// return that.replace(c.toLowerCase(), '');
+	return copyArray.join('');
 };
 
 // let str = 'Hello Worldlll';
@@ -40,5 +50,5 @@ String.prototype.trim = function(c) {
 // console.log(str);
 
 console.log('LLLHello Worldlll'.trim('l'), 'Hello World');
-// console.log('   Hello World                 '.trim(), 'Hello World');
-// console.log('XVisca ElbarcaXX'.trim('X'), 'Visca Elbarca');
+console.log('   Hello World                 '.trim(), 'Hello World');
+console.log('XVisca ElbarcaXX'.trim('X'), 'Visca Elbarca');
