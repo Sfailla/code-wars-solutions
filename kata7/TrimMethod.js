@@ -2,18 +2,18 @@ String.prototype.trim = function(c) {
 	// code goes here
 	const that = this;
 	let copyArray = that;
-	let checkCase;
+
+	console.log(copyArray);
+
 	let letters = Object.values(copyArray);
 
-	if (!c) {
-		checkCase = ' ';
-		// checkCase = c === c.toLowerCase() ? c.toUpperCase() : c;
-	} else {
-		checkCase = c.toLowerCase() || c.toUpperCase();
+	if (c !== undefined) {
+		c = c.toLowerCase() || c.toUpperCase();
 	}
+
 	const trimRight = string => {
 		let i = 1;
-		let target = checkCase;
+		let target = c || ' ';
 		while (i < string.length) {
 			if (string[string.length - i] === target) {
 				++i;
@@ -27,7 +27,7 @@ String.prototype.trim = function(c) {
 
 	const trimLeft = string => {
 		let i = 0;
-		let target = checkCase;
+		let target = c || ' ';
 		while (i < string.length) {
 			if (string[i] === target) {
 				++i;
