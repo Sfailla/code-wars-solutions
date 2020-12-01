@@ -9,6 +9,8 @@ function partsSums(ls) {
 		return val;
 	});
 
+	obj;
+
 	Object.keys(obj).map(key => {
 		total = obj[key].reduce((acc, val) => {
 			return acc + val;
