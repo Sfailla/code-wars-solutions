@@ -11,10 +11,7 @@ let orderedCount = function(text) {
 };
 
 const examples = [
-	[
-		'abracadabra',
-		[ [ 'a', 5 ], [ 'b', 2 ], [ 'r', 2 ], [ 'c', 1 ], [ 'd', 1 ] ]
-	],
+	[ 'abracadabra', [ [ 'a', 5 ], [ 'b', 2 ], [ 'r', 2 ], [ 'c', 1 ], [ 'd', 1 ] ] ],
 	// [
 	// 	'Code Wars',
 	// 	[
@@ -33,7 +30,7 @@ const examples = [
 ];
 
 const it = (string, cb) => {
-	if (string || cb)
+	if (string && cb)
 		return {
 			string,
 			cb: cb()
@@ -43,7 +40,7 @@ const it = (string, cb) => {
 const add = (a, b) => a + b;
 
 it('this is text', () => {
-	return add(3, 4);
+	add(3, 4);
 });
 
 for (const [ text, expected ] of examples) {
