@@ -1,6 +1,10 @@
-export default function Tests() {
-	const describe = function(message, cb) {
-		return `${message}: \n ` + cb();
+function Tests() {
+	const describe = function(message, fn) {
+		return `${message}: \n ` + fn();
+	};
+
+	const it = function(message, fn) {
+		return `${message}: \n ` + fn();
 	};
 
 	const assertEquals = function(a, b) {
@@ -10,30 +14,30 @@ export default function Tests() {
 		return a === b ? passMsg : failMsg;
 	};
 
-	describe('entity', () => {
-		assertEquals(bowlingPins([ 2, 3 ]), 'I I I I\n I I I \n       \n   I   ');
-		assertEquals(bowlingPins([ 1, 2, 10 ]), 'I I I  \n I I I \n    I  \n       ');
-	});
-
 	return {
 		describe,
+		it,
 		assertEquals
 	};
 }
 
 const Test = new Tests();
 
-Test.describe('Example Tests', function() {
-	const arr = [ 1, 2, 3, 5 ];
-	const string = 'a string';
-	return [ ...arr, string ];
+export { Test };
+
+Test.describe('unit test', function() {
+	const sum = (a, b) => a + b;
+	Test.assertEquals(sum(2, 3), 5);
+	Test.assertEquals(sum(5, 5), 10);
 });
 
-// TEST MOCK USING OBJECT
-
 // const Test = {
-// 	describe: function(message, cb) {
-//     return `${message}: \n ` + cb();
+// 	describe: function(message, fn) {
+// 		return `${message}: \n ` + fn();
+// 	},
+
+// 	it: function(message, fn) {
+// 		return `${message}: \n ` + fn();
 // 	},
 
 // 	assertEquals: function(a, b) {
@@ -43,3 +47,5 @@ Test.describe('Example Tests', function() {
 // 		return a === b ? passMsg : failMsg;
 // 	}
 // };
+
+// export { Test };
