@@ -1,51 +1,45 @@
-function Tests() {
-	const describe = function(message, fn) {
-		return `${message}: \n ` + fn();
-	};
+class TestRunner {
+	constructor() {
+		this.cache = {};
+	}
 
-	const it = function(message, fn) {
-		return `${message}: \n ` + fn();
-	};
+	runTests() {
+		this.cache;
+	}
 
-	const assertEquals = function(a, b) {
+	describe(message, fn) {
+		this.cache['describe'] = {
+			message,
+			fn: fn()
+		};
+	}
+
+	it(message, fn) {
+		this.cache['it'] = {
+			message,
+			fn: fn()
+		};
+	}
+
+	assertEquals(a, b) {
 		const passMsg = 'you passed!!';
 		const failMsg = `expected: ${b}, instead got: ${a}`;
 
 		return a === b ? passMsg : failMsg;
-	};
-
-	return {
-		describe,
-		it,
-		assertEquals
-	};
+	}
 }
 
-const Test = new Tests();
+const Test = new TestRunner();
 
 export { Test };
 
+const sum = (a, b) => a + b;
+
 Test.describe('unit test', function() {
-	const sum = (a, b) => a + b;
-	Test.assertEquals(sum(2, 3), 5);
-	Test.assertEquals(sum(5, 5), 10);
+	Test.it('should sum 2 numbers', () => {
+		Test.assertEquals(sum(2, 3), 5);
+		Test.assertEquals(sum(5, 5), 10);
+	});
 });
 
-// const Test = {
-// 	describe: function(message, fn) {
-// 		return `${message}: \n ` + fn();
-// 	},
-
-// 	it: function(message, fn) {
-// 		return `${message}: \n ` + fn();
-// 	},
-
-// 	assertEquals: function(a, b) {
-// 		const passMsg = 'you passed!!';
-// 		const failMsg = `expected: \n ${b}, instead got: ${a}`;
-
-// 		return a === b ? passMsg : failMsg;
-// 	}
-// };
-
-// export { Test };
+Test.runTests();
