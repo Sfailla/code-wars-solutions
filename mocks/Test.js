@@ -1,21 +1,21 @@
 class TestRunner {
 	constructor() {
-		this.cache = {};
+		this.obj = {};
 	}
 
 	runTests() {
-		this.cache;
+		this.obj;
 	}
 
 	describe(message, fn) {
-		this.cache['describe'] = {
+		this.obj['describe'] = {
 			message,
 			fn: fn()
 		};
 	}
 
 	it(message, fn) {
-		this.cache['it'] = {
+		this.obj['it'] = {
 			message,
 			fn: fn()
 		};
