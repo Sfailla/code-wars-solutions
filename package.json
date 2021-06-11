@@ -4,8 +4,7 @@
 	"description": "solving algorithms at code wars",
 	"main": "index.js",
 	"scripts": {
-		"start": "live-server --browser=chrome",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"start": "node -v"
 	},
 	"author": "Steven Failla",
 	"license": "ISC"
