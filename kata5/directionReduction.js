@@ -1,11 +1,21 @@
 const checkEquality = (arr1, arr2) => {
-  return arr1.every((element, index) => {
-    return element === arr2[index]
-  })
+  return arr1.length === arr2.length ? arr1.every(element => arr2.includes(element)) : false
 }
 
 function dirReduc(arr) {
   // solve
+
+  const nsMap = ['NORTH', 'SOUTH']
+  const ewMap = ['EAST', 'WEST']
+
+  const copy = arr.slice()
+
+  const dirs = copy.filter((val, i) =>
+    // checkEquality(arr.slice(i, i + 2), nsMap)
+    checkEquality(arr.slice(i, i + 2), ewMap)
+  )
+
+  dirs
 
   return arr
 }
