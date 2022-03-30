@@ -1,9 +1,9 @@
-interface IUserDetails {
-  name: string;
-  age: number;
+interface IUser {
+  name: string
+  age: number
 }
 
-function createUser(age: number, name: string): IUserDetails {
+function createUser(age: number, name: string): IUser {
   return {
     age,
     name
@@ -13,34 +13,38 @@ function createUser(age: number, name: string): IUserDetails {
 createUser(25, 'John')
 
 interface IParams {
-  user: string,
+  user: IUser
   delay: number
 }
 
-const waitForUser = (user: string, delay: number): Promise<string> => {
-  return new Promise<string>((resolve) => {
-    setTimeout(() => {
-      resolve(user)
-    }, delay)
+const waitForUser = (user: string, delay: number): Promise<string | void> => {
+  return new Promise((resolve, reject) => {
+    if (user) {
+      setTimeout(() => {
+        resolve(user)
+      }, delay)
+    } else {
+      reject('User is not defined')
+    }
   })
 }
 
-const getUserFromServer = (): Promise<string> => {
-  const userList: string[] = ['John', 'Jane', 'Jack'];
+const getUserFromServer: () => Promise<void> = async () => {
+  const userList: string[] = ['John', 'Jane', 'Jack']
   const randomUser: string = userList[Math.floor(Math.random() * userList.length)]
-  return waitForUser(randomUser, 1000)
+  await waitForUser(randomUser, 1000)
 }
 
-getUserFromServer() //?
+getUserFromServer()
 
 const sum = (a: number, b: any): any => a + b
 
-sum(1, 2) //?
-sum(1, 'cat') //?
+sum(1, 2)
+sum(1, 'cat')
 
 const updateNumber = (): void => {
   let number: number = 100
-  number = number + 1 //?
+  number = number + 1
 }
 
-updateNumber() //?
+updateNumber()
